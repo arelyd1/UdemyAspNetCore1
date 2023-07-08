@@ -1,0 +1,59 @@
+﻿@using UdemyAspNetCore1.Models
+@addTagHelper *,Microsoft.AspNetCore.Mvc.tagHelpers
+@model List<Customer>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+   
+<h3>Customer List</h3>
+<paragraph short-description="dilara"></paragraph>
+<div class="row">
+    <div class="col-4">
+         @await Component.InvokeAsync("News")
+        @* <partial name="_NewsPartial" model="NewsContext.List" />*@
+   
+
+    </div>
+    <div class="col-8">
+        <a asp-action="Create" asp-controller="Home">Create</a>
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th> First Name</th>
+                    <th> Last Name</th>
+                    <th> Age</th>
+                    <th> Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td> @item.FirstName </td>
+                        <td> @item.LastName </td>
+                        <td> @item.Age </td>
+                        <td>
+                            <a asp-action="Update" asp-controller="Home" asp-route-id="@item.Id">GÜNCELLE</a>
+                            <a asp-action="emove" asp-controller="Home" asp-route-id="@item.Id ">SİL</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+   
+
+
+   
+        
+        
+
+
+
+
+
+
+

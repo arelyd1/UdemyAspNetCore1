@@ -1,0 +1,9 @@
+﻿@model List<News>
+<ul class="list-group">
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item text-black-50 danger"
+        aria-current="true">@item.Title</li>
+    }
+
+</ul>
